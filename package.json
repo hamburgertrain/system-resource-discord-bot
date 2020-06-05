@@ -1,0 +1,11 @@
+{
+    "name": "sys-res-discord-bot",
+    "version": "1.0.0",
+    "description": "Server Resource Usage Discord Bot - Reports Server Stats",
+    "main": "bot.js",
+    "author": "Tyler Bialoblocki",
+    "dependencies": {
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+        "node-os-utils": ">=1.2.2"
+    }
+}
