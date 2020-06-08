@@ -76,7 +76,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                             to: channelID,
                             message: total + used + free + percentFree
                         });
-                    })
+                    });
                     return;
 
                     case 'uptime':
