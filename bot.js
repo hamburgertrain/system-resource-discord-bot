@@ -34,7 +34,7 @@ if (!config.token || config.token === "YOUR_DISCORD_BOT_TOKEN") {
     console.log('Please provide a bot token.');
     abort = true;
 }
-// We don't want to reply to everything
+// We don't want to reply to anything without a prefix
 if (!config.hotkey) {
     console.log('Please provide a command prefix.');
     abort = true;
