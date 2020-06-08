@@ -27,6 +27,23 @@ const Discord = require('discord.io');
 const config = require('./config.json');
 const osu = require('node-os-utils')
 
+// Init checks
+var abort = false;
+// We can't do anything without a token
+if (!config.token || config.token === "YOUR_DISCORD_BOT_TOKEN") {
+    console.log('Please provide a bot token.');
+    abort = true;
+}
+// We don't want to reply to everything
+if (!config.hotkey) {
+    console.log('Please provide a command prefix.');
+    abort = true;
+}
+if (abort) {
+    console.error('ABORTING!');
+    process.exit();
+}
+
 // Initialize Discord Bot
 const bot = new Discord.Client({
    token: config.token,
