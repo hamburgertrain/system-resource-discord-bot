@@ -109,9 +109,9 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         var minutes = Math.floor(total / 60);
                         total %= 60;
                         var seconds = Math.floor(total);
-                        var formattedTime = (days ? (days + ':') : '') + hours + ':' + minutes + ':' + seconds
+                        var formattedTime = (days ? (days + ':') : '') + hours + ':' + minutes + ':' + seconds;
 
-                        var uptime = 'Total server uptime: ' + formattedTime
+                        var uptime = 'Total server uptime: ' + formattedTime;
                         bot.sendMessage({
                             to: channelID,
                             message: uptime
