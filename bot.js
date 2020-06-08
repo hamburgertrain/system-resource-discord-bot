@@ -83,10 +83,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         var os = osu.os;
                         var total = os.uptime();
 
-                        var days = Math.floor((total / 60 / 60) / 24);
-                        var hours = Math.floor(total / 60 / 60) - (days * 24);
-                        var minutes = Math.floor(total / 60) - (hours * 60);
-                        var seconds = total % 60;
+                        var days = Math.floor((total / (24 * 3600)));
+                        total = total % (24 * 3600);
+                        var hours = Math.floor(total / 3600);
+                        total %= 3600;
+                        var minutes = Math.floor(total / 60);
+                        total %= 60;
+                        var seconds = Math.floor(total);
                         var formattedTime = (days ? (days + ':') : '') + hours + ':' + minutes + ':' + seconds
 
                         var uptime = 'Total server uptime: ' + formattedTime
