@@ -1,4 +1,4 @@
-# mc-discord-bot
+# system-resource-discord-bot
 
 ## About
 
