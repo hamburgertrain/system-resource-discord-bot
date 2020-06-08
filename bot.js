@@ -64,9 +64,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     var mem = osu.mem;
                     mem.info()
                     .then(info => {
-                        var total = 'Total server memory: ' + info.totalMemMb + ' mb\n';
-                        var used = 'Used server memory: ' + info.usedMemMb + ' mb\n';
-                        var free = 'Free server memory: ' + info.freeMemMb + ' mb\n';
+                        // TODO: Add OS check here for mb / gb
+                        var total = 'Total server memory: ' + info.totalMemMb + '\n';
+                        var used = 'Used server memory: ' + info.usedMemMb + '\n';
+                        var free = 'Free server memory: ' + info.freeMemMb + '\n';
                         var percentFree = 'Free server memory percentage: ' + info.freeMemPercentage + '%\n';
                         bot.sendMessage({
                             to: channelID,
