@@ -84,9 +84,10 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                         var total = os.uptime();
 
                         var hours = Math.floor(total / 60 / 60);
+                        var days = Math.floor(hours / 24);
                         var minutes = Math.floor(total / 60) - (hours * 60);
                         var seconds = total % 60;
-                        var formattedTime = hours + ':' + minutes + ':' + seconds
+                        var formattedTime = days + ':' + hours + ':' + minutes + ':' + seconds
 
                         var uptime = 'Total server uptime: ' + formattedTime
                         bot.sendMessage({
