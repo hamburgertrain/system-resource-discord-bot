@@ -61,13 +61,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 return;
 
                 case 'ram':
+                    var os = osu.os;
+                    var platform = os.platform();
+                    var isWindows = platform === 'win32';
+                    
                     var mem = osu.mem;
                     mem.info()
                     .then(info => {
                         // TODO: Add OS check here for mb / gb
-                        var total = 'Total server memory: ' + info.totalMemMb + '\n';
-                        var used = 'Used server memory: ' + info.usedMemMb + '\n';
-                        var free = 'Free server memory: ' + info.freeMemMb + '\n';
+                        var total = 'Total server memory: ' + info.totalMemMb + (isWindows ? ' gb\n' : ' mb\n');
+                        var used = 'Used server memory: ' + info.usedMemMb + (isWindows ? ' gb\n' : ' mb\n');
+                        var free = 'Free server memory: ' + info.freeMemMb + (isWindows ? ' gb\n' : ' mb\n');
                         var percentFree = 'Free server memory percentage: ' + info.freeMemPercentage + '%\n';
                         bot.sendMessage({
                             to: channelID,
