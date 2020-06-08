@@ -27,6 +27,8 @@ const Discord = require('discord.io');
 const config = require('./config.json');
 const osu = require('node-os-utils')
 
+console.log('Starting...');
+
 // Init checks
 var abort = false;
 // We can't do anything without a token
